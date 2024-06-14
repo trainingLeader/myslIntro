@@ -1,11 +1,11 @@
-package com.example.intromysql.adapter;
+package adapter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.example.intromysql.domain.entities.Customer;
+import domain.Customer;
 
 public class MySQLCustomerRepository extends MySQLRepository<Customer, Long> {
     public MySQLCustomerRepository(String url, String username, String password) {
@@ -19,7 +19,7 @@ public class MySQLCustomerRepository extends MySQLRepository<Customer, Long> {
 
     @Override
     protected PreparedStatement createFindByIdStatement(Connection connection, Long id) throws SQLException {
-        String query = "SELECT * FROM customers WHERE id = ?";
+        String query = "SELECT id,name FROM customers WHERE id = ?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setLong(1, id);
         return statement;

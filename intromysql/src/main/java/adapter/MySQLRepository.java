@@ -1,4 +1,4 @@
-package com.example.intromysql.adapter;
+package adapter;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.intromysql.domain.repository.Repository;
+import domain.Repository;
 
 public abstract class MySQLRepository<T, ID> implements Repository<T, ID> {
     protected final String url;
@@ -44,7 +44,7 @@ public abstract class MySQLRepository<T, ID> implements Repository<T, ID> {
     public List<T> findAll() {
         List<T> entities = new ArrayList<>();
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String query = "SELECT * FROM " + getTableName();
+            String query = "SELECT id,name FROM " + getTableName();
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {

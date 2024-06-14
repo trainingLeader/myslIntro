@@ -1,4 +1,4 @@
-package com.example.intromysql.domain.entities;
+package domain;
 
 public class Customer {
     private Long id;

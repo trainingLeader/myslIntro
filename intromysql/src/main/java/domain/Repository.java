@@ -1,4 +1,4 @@
-package com.example.intromysql.domain.repository;
+package domain;
 
 import java.util.List;
 
