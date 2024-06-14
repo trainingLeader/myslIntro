@@ -26,6 +26,7 @@ public class Main {
 
         // Ejecutar la aplicación de consola
         //consoleController.run();
+        customerRepository.save(new Customer(6L, "Johlver Pardo"));
          List<Customer> customers = customerRepository.findAll();
          for (Customer customer : customers) {
             System.out.println("ID: " + customer.getId() + ", Name: " + customer.getName());

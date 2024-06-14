@@ -6,8 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import domain.Customer;
+import domain.CustomerRepository;
 
-public class MySQLCustomerRepository extends MySQLRepository<Customer, Long> {
+public class MySQLCustomerRepository extends MySQLRepository<Customer, Long> implements CustomerRepository {
     public MySQLCustomerRepository(String url, String username, String password) {
         super(url, username, password); 
     }
