@@ -9,7 +9,7 @@ import domain.Customer;
 
 public class MySQLCustomerRepository extends MySQLRepository<Customer, Long> {
     public MySQLCustomerRepository(String url, String username, String password) {
-        super(url, username, password);
+        super(url, username, password); 
     }
 
     @Override
